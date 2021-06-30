@@ -1,12 +1,14 @@
 NAME = libftprintf.a
 
-SRC = *.c
+SRC = ft_printf.c get_flags.c get_star.c print_charstr.c \
+		  print_percent.c print_pointer.c print_u_d_i.c print_uhex.c \
+		  utils.c utils_a.c 
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = ft_printf.h
 
 all: $(NAME)
-
+	
 $(NAME): $(INCLUDES)
 	@gcc $(CFLAGS) -c $(SRC)
 #	@gcc $(OBJ)
