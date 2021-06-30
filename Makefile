@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c get_flags.c get_star.c print_charstr.c \
-		  print_percent.c print_pointer.c print_u_d_i.c print_uhex.c \
+		  print_percent.c print_pointer.c print_interger.c print_uhex.c \
 		  utils.c utils_a.c 
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
