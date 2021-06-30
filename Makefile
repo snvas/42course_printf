@@ -9,7 +9,7 @@ all: $(NAME)
 
 $(NAME): $(INCLUDES)
 	@gcc $(CFLAGS) -c $(SRC)
-	@gcc $(OBJ)
+#	@gcc $(OBJ)
 #	@./a.out
 	ar rc $(NAME) $(OBJ)
 
