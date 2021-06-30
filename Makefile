@@ -13,7 +13,7 @@ $(NAME): $(INCLUDES)
 #	@./a.out
 	ar rc $(NAME) $(OBJ)
 
-git:
+git:	fclean
 		git add .
 		git commit -m "newcommit"
 		git push
