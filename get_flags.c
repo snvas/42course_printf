@@ -6,13 +6,13 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:14:14 by snovaes           #+#    #+#             */
-/*   Updated: 2021/06/30 15:38:30 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/06/30 16:04:29 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_da_dani(t_flags *flags, va_list args)
+void	print_flags(t_flags *flags, va_list args)
 {
 	if (flags->type == '%')
 		print_percent(flags);
@@ -50,7 +50,7 @@ void	get_specs(const char *str, t_flags *flags, va_list args)
 		flags->type = 'X';
 	else if (str[flags->count] == '%')
 		flags->type = '%';
-	print_da_dani(flags, args);
+	print_flags(flags, args);
 }
 
 void	get_flag_a(const char *str, t_flags *flags, va_list args)
