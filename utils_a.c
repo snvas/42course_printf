@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:35:31 by snovaes           #+#    #+#             */
-/*   Updated: 2021/06/30 15:35:46 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/01 22:26:03 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static char	*hextoa_a(char *str, t_flags *flags, unsigned long long temp,
 	return (str);
 }
 
-char	*hextoa(t_flags *flags, unsigned long long nb)
+char	*ft_hextoa(t_flags *flags, unsigned long long nb)
 {
 	int					count;
 	char				*str;

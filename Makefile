@@ -2,7 +2,7 @@ NAME = libftprintf.a
 
 SRC = ft_printf.c get_flags.c get_star.c print_charstr.c \
 		  print_percent.c print_pointer.c print_interger.c print_uhex.c \
-		  utils.c utils_a.c 
+		  utils.c utils_a.c utils_extra.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = ft_printf.h

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_u_d_i.c                                      :+:      :+:    :+:   */
+/*   print_interger.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:26:58 by snovaes           #+#    #+#             */
-/*   Updated: 2021/06/30 15:38:41 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/01 22:30:02 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	verify_print_d_i(t_flags *flags, char *number, int size)
 	else if (flags->negative == 1 && flags->zero == 0)
 		print_int(flags, number, size);
 	else
-		print_uhex(flags, number, size);
+		print_uhexoct(flags, number, size);
 	free(number);
 }
 

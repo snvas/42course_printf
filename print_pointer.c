@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_ptr.c                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:23:50 by snovaes           #+#    #+#             */
-/*   Updated: 2021/06/30 15:24:45 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/01 22:29:35 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	print_pointer(t_flags *flags, unsigned long pointer)
 	char			*ptr;
 
 	flags->count++;
-	ptr = hextoa(flags, pointer);
+	ptr = ft_hextoa(flags, pointer);
 	size = (int)ft_strlen(ptr) + 2;
 	if ((pointer == 0) && flags->dot == 1)
 		size = 2;

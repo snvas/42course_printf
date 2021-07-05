@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:11:20 by snovaes           #+#    #+#             */
-/*   Updated: 2021/06/30 15:36:12 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/01 22:33:39 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void			print_int(t_flags *flags, char *number, int size);
 void			print_d_i(t_flags *flags, long int num);
 void			print_du(t_flags *flags, unsigned int num);
 void			print_hex(t_flags *flags, unsigned int num);
-void			print_uhex(t_flags *flags, char *number, int size);
+void			print_octal(t_flags *flags, unsigned int num);
+void			print_uhexoct(t_flags *flags, char *number, int size);
 void			print_pointer(t_flags *flags, unsigned long pointer);
 void			print_ptr(t_flags *flags, char *ptr, int size);
 
@@ -75,7 +76,8 @@ int				ft_isdigit(int c);
 void			ft_putstr(t_flags *flags, char *s, size_t size);
 size_t			ft_strlen(const char *s);
 char			*ft_itoa(long int n);
-char			*hextoa(t_flags *flags, unsigned long long nb);
+char			*ft_hextoa(t_flags *flags, unsigned long long nb);
 char			*ft_utoa(unsigned int n);
+char			*ft_otoa(t_flags *flags, unsigned long long nb);
 
 #endif
