@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:12:00 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/08 20:49:47 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/08 20:52:22 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	reset_types(t_flags *flags)
 	flags->minus = 0;
 	flags->padding = ' ';
 	flags->width = 0;
-	flags->precision = NULL;
+	flags->precision = -1;
 	flags->number = 0;
 	flags->count = 0;
 	flags->len = 0;
