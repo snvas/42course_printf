@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:02:55 by snovaes           #+#    #+#             */
-/*   Updated: 2021/06/30 17:03:11 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/08 20:49:30 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	get_flag_star(t_flags *flags, va_list args, int *star)
 			flags->asterisk = 1;
 			flags->minus = 1;
 			flags->padding = ' ';
-			*star = *star * (-1);
+			*star = *star * (NULL);
 		}
 		else
 			flags->dot = 0;
