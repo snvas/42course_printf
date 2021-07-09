@@ -30,9 +30,9 @@ int	main(void)
 	 printf("___printf: |%23p|\n", NULL);
 	 ft_printf("ft_printf: |%.*s|\n", -5, "42");
 	 printf("___printf: |%.*s|\n", -5, "42");
-//	 ft_printf("ft_printf:  --- Return : %d\n",  ft_printf("|%-2s|\n|%.s|\n|%-4s|\n|%-2.4s|\n|%-8.12s|\n|%3s|\n|%8s|\n|%---2s|\n|%.*s|\n|%.0s|\n|%.1s|\n|%.2s|\n|%.4s|\n|%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
-//	 printf("___printf:  --- Return : %d\n", printf("|%-2p|\n|%.p|\n|%-4p|\n|%-2.4p|\n|%-8.12p|\n|%3p|\n|%8p|\n|%---2p|\n|%.*p|\n|%.0p|\n|%.1p|\n|%.2p|\n|%.4p|\n|%.8p|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
-
+	 ft_printf("ft_printf:  --- Return : %d\n",  ft_printf("|%-2s|\n|%.s|\n|%-4s|\n|%-2.4s|\n|%-8.12s|\n|%3s|\n|%8s|\n|%---2s|\n|%.*s|\n|%.0s|\n|%.1s|\n|%.2s|\n|%.4s|\n|%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
+	 printf("printf:  --- Return : %d\n",  printf("|%-2s|\n|%.s|\n|%-4s|\n|%-2.4s|\n|%-8.12s|\n|%3s|\n|%8s|\n|%---2s|\n|%.*s|\n|%.0s|\n|%.1s|\n|%.2s|\n|%.4s|\n|%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL));
+	
 	/*
 	** 	integers:
 	*/
@@ -53,7 +53,7 @@ int	main(void)
 	 ft_printf("ft_printf: |%5.i|\n", 0);
 	 printf("___printf: |%5.i|\n", 0);
 	 ft_printf("ft_printf: |%010.5i|\n", -216);
-//	 printf("___printf: |%010.5i|\n", -216);
+	 printf("___printf: |%010.5i|\n", -216);
 	 
 	 ft_printf("ft_printf: |%.0u|\n", 10);
 	 printf("___printf: |%.0u|\n", 10);
@@ -76,7 +76,7 @@ int	main(void)
 	 ft_printf("ft_printf: |%1.p|\n", NULL);
 	 printf("___printf: |0x|\n");
 	 ft_printf("ft_printf: |%5.p|\n", NULL);
-//	 printf("___printf: |   0x|\n", NULL);
+	 printf("___printf: |   0x|\n", NULL);
 	
 	 ft_printf("ft_printf: |%026.51%|\n");
 	 printf("___printf: |0000000000000000000000000%%|\n");
