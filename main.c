@@ -109,6 +109,8 @@ int	main(void)
 	 ft_printf("ft_printf: |%-*c|\n", 3, 'x');
 	printf("__printf:|%-*c|\n", 3, 'x');
 
+	char a;
+
 		a = 'b';
 	printf("--No flags--\n");
 	printf("hello\n");
@@ -417,7 +419,7 @@ int	main(void)
 	printf("%-60s: |%-20p|", "minimum field (20) left align", pointer);
 	printf("\n");
 	ft_printf("%-60s: |%-20p|", "FT minimum field (20) left align", pointer);
-	printf("\n");*/
+	printf("\n");
 
 	ft_printf("|%09s|\n", "hi low");
 	/*printf("|%*c%*c|\n", -10, '0', 10, '1');
