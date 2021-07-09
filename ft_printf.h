@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:11:20 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/01 22:33:39 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/09 16:28:22 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@
 typedef struct s_flags
 {
 	char	type;
-	char	zero;
-	char	minus;
-	char	padding;
-	int		width;
-	int		precision;
-	int		number;
 	int		count;
 	int		len;
-	char	dot;
+	int		number;
 	char	negative;
+	char	minus;
+	char	zero;
+	int		width;
+	char	padding;
+	int		precision;
+	char	dot;
 	char	asterisk;
 }				t_flags;
 

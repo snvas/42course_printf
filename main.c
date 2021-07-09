@@ -70,6 +70,18 @@ int	main(void)
 	 printf("___printf: |%*.*x| |%*.*X|\n", 1, 50, 5000, 1, 0, 10);
 
 	/*
+	** 	octal:
+	*/ 
+	
+	 ft_printf("ft_printf: |%.0o|\n", 100);
+	 printf("___printf: |%.0o|\n", 100);
+	 ft_printf("ft_printf: |%.o|\n", 0);
+	 printf("___printf: |%.o|\n", 0);
+	 ft_printf("ft_printf: |%*.*o| |%*.*o|\n", 1, 50, 5000, 1, 0, 10);
+	 printf("___printf: |%*.*o| |%*.*o|\n", 1, 50, 5000, 1, 0, 10);
+
+
+	/*
 	** 	pointer:
 	*/
 
