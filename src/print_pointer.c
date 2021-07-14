@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:23:50 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 12:51:31 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 12:59:38 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	print_pointer(t_flags *flags, unsigned long pointer)
 	flags->count++;
 	ptr = ft_hextoa(flags, pointer);
 	size = (int)ft_strlen(ptr) + 2;
-	if ((pointer == 0))
+	if (pointer == 0)
 		size = 2;
 	print_ptr(flags, ptr, size);
 	free(ptr);
