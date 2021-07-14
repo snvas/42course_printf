@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:12:00 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 02:25:25 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 02:26:22 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 void	reset_types(t_flags *flags)
 {
@@ -19,7 +19,13 @@ void	reset_types(t_flags *flags)
 	flags->len = 0;
 	flags->number = 0;
 	flags->negative = 0;
+	flags->minus = 0;
+	flags->zero = 0;
 	flags->width = 0;
+	flags->padding = ' ';
+	flags->precision = -1;
+	flags->dot = 0;
+	flags->asterisk = 0;
 }
 
 int	ft_printf(const char *input, ...)

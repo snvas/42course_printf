@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:11:20 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 02:27:31 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 02:35:50 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTF_BONUS_H
+# define FT_PRINTF_BONUS_H
 
 # include <stdarg.h>
 # include <stdio.h>
@@ -32,7 +32,13 @@ typedef struct s_flags
 	int		len;
 	int		number;
 	char	negative;
+	char	minus;
+	char	zero;
 	int		width;
+	char	padding;
+	int		precision;
+	char	dot;
+	char	asterisk;
 }				t_flags;
 
 /*
@@ -42,6 +48,8 @@ typedef struct s_flags
 int				ft_printf(const char *input, ...);
 void			reset_types(t_flags *flags);
 void			get_flags(const char *str, t_flags *flags, va_list args);
+void			get_flag_a(const char *str, t_flags *flags, va_list args);
+void			get_flag_star(t_flags *flags, va_list args, int *star);
 int				is_number(const char *str, t_flags *flags);
 void			reset_flags(t_flags *flags);
 
@@ -53,7 +61,8 @@ void			print_int(t_flags *flags, char *number, int size);
 void			print_d_i(t_flags *flags, long int num);
 void			print_du(t_flags *flags, unsigned int num);
 void			print_hex(t_flags *flags, unsigned int num);
-void			print_uhex(t_flags *flags, char *number, int size);
+void			print_octal(t_flags *flags, unsigned int num);
+void			print_uhexoct(t_flags *flags, char *number, int size);
 void			print_pointer(t_flags *flags, unsigned long pointer);
 void			print_ptr(t_flags *flags, char *ptr, int size);
 
@@ -69,5 +78,6 @@ size_t			ft_strlen(const char *s);
 char			*ft_itoa(long int n);
 char			*ft_hextoa(t_flags *flags, unsigned long long nb);
 char			*ft_utoa(unsigned int n);
+char			*ft_otoa(t_flags *flags, unsigned long long nb);
 
 #endif

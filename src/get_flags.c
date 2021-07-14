@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_flags.c                                        :+:      :+:    :+:   */
+/*   get_flags_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:14:14 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 02:34:09 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 01:50:29 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 void	print_flags(t_flags *flags, va_list args)
 {
@@ -26,6 +26,8 @@ void	print_flags(t_flags *flags, va_list args)
 		print_du(flags, (va_arg(args, unsigned)));
 	else if (flags->type == 'x' || flags->type == 'X')
 		print_hex(flags, (va_arg(args, unsigned int)));
+	else if (flags->type == 'o')
+		print_octal(flags, (va_arg(args, unsigned int)));
 	else if (flags->type == 'p')
 		print_pointer(flags, (va_arg(args, unsigned long)));
 }
@@ -44,6 +46,8 @@ void	get_specs(const char *str, t_flags *flags, va_list args)
 		flags->type = 'p';
 	else if (str[flags->count] == 'u')
 		flags->type = 'u';
+	else if (str[flags->count] == 'o')
+		flags->type = 'o';
 	else if (str[flags->count] == 'x')
 		flags->type = 'x';
 	else if (str[flags->count] == 'X')
@@ -53,31 +57,43 @@ void	get_specs(const char *str, t_flags *flags, va_list args)
 	print_flags(flags, args);
 }
 
-void	get_flags(const char *str, t_flags *flags, va_list args)
+void	get_flag_a(const char *str, t_flags *flags, va_list args)
 {
-	while (str[flags->count] == '0')
+	if (str[flags->count] == '.')
 	{
+		flags->dot = 1;
 		flags->count++;
+		if (str[flags->count] == '*')
+			get_flag_star(flags, args, &flags->precision);
+		else if (is_number(str, flags) == 1)
+			flags->precision = flags->number;
+		else
+			flags->precision = 0;
 	}
-	if (is_number(str, flags) == 1)
-		flags->width = flags->number;
 	get_specs(str, flags, args);
 }
 
-int	is_number(const char *str, t_flags *flags)
+void	get_flags(const char *str, t_flags *flags, va_list args)
 {
-	flags->number = 0;
-	if (!(ft_isdigit((int)str[flags->count])))
-		return (0);
-	while (ft_isdigit((int)str[flags->count]))
+	while (str[flags->count] == '0' || str[flags->count] == '-')
 	{
-		flags->number = ((flags->number) * 10) + (int)str[flags->count] - '0';
+		if (str[flags->count] == '0' && flags->minus == 0)
+		{
+			flags->zero = 1;
+			flags->minus = 0;
+			flags->padding = '0';
+		}
+		else if (str[flags->count] == '-')
+		{
+			flags->zero = 0;
+			flags->minus = 1;
+			flags->padding = ' ';
+		}
 		flags->count++;
 	}
-	return (1);
-}
-
-void	reset_flags(t_flags *flags)
-{
-	flags->negative = 0;
+	if (str[flags->count] == '*')
+		get_flag_star(flags, args, &flags->width);
+	else if (is_number(str, flags) == 1)
+		flags->width = flags->number;
+	get_flag_a(str, flags, args);
 }
