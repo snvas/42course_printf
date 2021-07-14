@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:30:32 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 02:29:26 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 13:21:58 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	print_du(t_flags *flags, unsigned int num)
 
 void	print_uhex(t_flags *flags, char *number, int size)
 {
+	if (flags->width <= 0)
+		flags->width = size;
 	ft_putstr(flags, number, size);
 	reset_flags(flags);
 }
