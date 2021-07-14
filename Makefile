@@ -11,7 +11,8 @@ SRCFILES = ft_printf.c\
 	  utils.c\
 	  utils_a.c\
 	  utils_extra.c
-SRCBONUSFILES = ft_printf_bonus.c\
+
+BONUSFILES = ft_printf_bonus.c\
 		   get_flags_bonus.c\
 		   get_star_bonus.c\
 		   print_charstr_bonus.c\
@@ -25,10 +26,10 @@ SRCBONUSFILES = ft_printf_bonus.c\
 SRCDIR = ./src
 BONUSDIR = ./bonus
 SRC = $(addprefix $(SRCDIR)/, $(SRCFILES))
-SRCBONUS = $(addprefix $(BONUSDIR)/, $(SRCBONUSFILES))
+SRCBONUS = $(addprefix $(BONUSDIR)/, $(BONUSFILES))
 
 OBJFILES = $(SRCFILES:.c=.o)
-OBJBONUSFILES = $(SRCBONUSFILES:.c=.o)
+OBJBONUSFILES = $(BONUSFILES:.c=.o)
 OBJ =  $(addprefix ./obj/, $(OBJFILES))
 OBJBONUS = $(addprefix ./obj/, $(OBJBONUSFILES))
 CFLAGS = -Wall -Wextra -Werror

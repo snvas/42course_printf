@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_flags_bonus.c                                  :+:      :+:    :+:   */
+/*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:14:14 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 01:50:29 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 13:36:33 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 void	print_flags(t_flags *flags, va_list args)
 {
