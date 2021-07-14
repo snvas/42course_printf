@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_star.c                                         :+:      :+:    :+:   */
+/*   get_star_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:02:55 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/09 18:06:19 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 01:50:34 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	is_number(const char *str, t_flags *flags)
 {

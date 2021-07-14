@@ -1,19 +1,54 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c get_flags.c get_star.c print_charstr.c \
-		  print_percent.c print_pointer.c print_interger.c print_uhex.c \
-		  utils.c utils_a.c utils_extra.c
-OBJ = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror
-INCLUDES = ft_printf.h
+SRCFILES = ft_printf.c\
+	  get_flags.c\
+	  print_charstr.c\
+	  print_percent.c\
+	  print_pointer.c\
+	  print_interger.c\
+	  print_uhex.c\
+	  utils.c\
+	  utils_a.c
+SRCBONUSFILES = ft_printf_bonus.c\
+		   get_flags_bonus.c\
+		   get_star_bonus.c\
+		   print_charstr_bonus.c\
+		   print_percent_bonus.c\
+		   print_pointer_bonus.c\
+		   print_interger_bonus.c\
+		   print_uhex_bonus.c\
+		   utils_bonus.c\
+		   utils_a_bonus.c\
+		   utils_extra_bonus.c
+SRCDIR = ./src
+BONUSDIR = ./bonus
+SRC = $(addprefix $(SRCDIR)/, $(SRCFILES))
+SRCBONUS = $(addprefix $(BONUSDIR)/, $(SRCBONUSFILES))
 
+OBJFILES = $(SRCFILES:.c=.o)
+OBJBONUSFILES = $(SRCBONUSFILES:.c=.o)
+OBJ =  $(addprefix ./obj/, $(OBJFILES))
+OBJBONUS = $(addprefix ./obj/, $(OBJBONUSFILES))
+CFLAGS = -Wall -Wextra -Werror
+INCLUDES = ./src/ft_printf.h
+INCLUDESBONUS = ./bonus/ft_printf_bonus.h
 all: $(NAME)
-	
-$(NAME): $(INCLUDES)
-	@gcc $(CFLAGS) -c $(SRC)
+
+./obj/%.o: ./src/%.c
+	mkdir -p obj
+	$(CC) $(CFLAGS) $< -c -o $@
+
+./obj/%.o: ./bonus/%.c
+	mkdir -p obj
+	$(CC) $(CFLAGS) $< -c -o $@
+
+$(NAME): $(INCLUDES) $(OBJ)
 #	@gcc $(OBJ)
 #	@./a.out
 	ar rc $(NAME) $(OBJ)
+
+bonus: $(INCLUDESBONUS) $(OBJBONUS)
+	ar rc $(NAME) $(OBJBONUS)
 
 git:	fclean
 		git add .
@@ -22,6 +57,7 @@ git:	fclean
 
 clean:
 		rm -f $(OBJ) a.out
+		rm -f $(OBJBONUS) a.out
 
 fclean: clean
 		rm -f $(NAME)
