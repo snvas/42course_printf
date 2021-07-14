@@ -29,7 +29,7 @@ OBJFILES = $(SRCFILES:.c=.o)
 OBJBONUSFILES = $(BONUSFILES:.c=.o)
 OBJ =  $(addprefix ./obj/, $(OBJFILES))
 OBJBONUS = $(addprefix ./obj/, $(OBJBONUSFILES))
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = ./src/ft_printf.h
 INCLUDESBONUS = ./bonus/ft_printf_bonus.h
 all: $(NAME)
