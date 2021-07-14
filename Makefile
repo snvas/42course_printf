@@ -2,13 +2,15 @@ NAME = libftprintf.a
 
 SRCFILES = ft_printf.c\
 	  get_flags.c\
+	  get_star.c\
 	  print_charstr.c\
 	  print_percent.c\
 	  print_pointer.c\
 	  print_interger.c\
 	  print_uhex.c\
 	  utils.c\
-	  utils_a.c
+	  utils_a.c\
+	  utils_extra.c
 SRCBONUSFILES = ft_printf_bonus.c\
 		   get_flags_bonus.c\
 		   get_star_bonus.c\
