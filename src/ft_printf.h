@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:11:20 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 13:36:48 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 14:14:00 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ void			print_int(t_flags *flags, char *number, int size);
 void			print_d_i(t_flags *flags, long int num);
 void			print_du(t_flags *flags, unsigned int num);
 void			print_hex(t_flags *flags, unsigned int num);
-void			print_octal(t_flags *flags, unsigned int num);
-void			print_uhexoct(t_flags *flags, char *number, int size);
+void			print_uhex(t_flags *flags, char *number, int size);
 void			print_pointer(t_flags *flags, unsigned long pointer);
 void			print_ptr(t_flags *flags, char *ptr, int size);
 

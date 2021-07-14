@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:30:32 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 01:51:19 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 14:15:14 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	print_du(t_flags *flags, unsigned int num)
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)
 		size = 0;
-	print_uhexoct(flags, number, size);
+	print_uhex(flags, number, size);
 	free(number);
 }
 
@@ -39,7 +39,7 @@ void	print_du(t_flags *flags, unsigned int num)
 ** Deals with precision for u and hexadecimals
 */
 
-static void	precision_uhexoct(t_flags *flags, char *number, int size)
+static void	precision_uhex(t_flags *flags, char *number, int size)
 {
 	if (flags->dot == 1 && flags->precision > size)
 	{
@@ -61,7 +61,7 @@ static void	precision_uhexoct(t_flags *flags, char *number, int size)
 	}
 }
 
-void	print_uhexoct(t_flags *flags, char *number, int size)
+void	print_uhex(t_flags *flags, char *number, int size)
 {
 	if (flags->width <= 0)
 		flags->width = size;
@@ -73,7 +73,7 @@ void	print_uhexoct(t_flags *flags, char *number, int size)
 			flags->width = flags->width - size;
 		print_padding(flags, flags->width);
 	}
-	precision_uhexoct(flags, number, size);
+	precision_uhex(flags, number, size);
 	ft_putstr(flags, number, size);
 	if (flags->width > size && flags->minus == 1)
 	{
@@ -106,29 +106,6 @@ void	print_hex(t_flags *flags, unsigned int num)
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)
 		size = 0;
-	print_uhexoct(flags, number, size);
-	free(number);
-}
-
-/*
-** Prints unsigned octal o
-*/
-
-void	print_octal(t_flags *flags, unsigned int num)
-{
-	int				size;
-	char			*number;
-
-	flags->count++;
-	if (flags->dot == 1)
-	{
-		flags->zero = 0;
-		flags->padding = ' ';
-	}
-	number = ft_otoa(flags, (unsigned long long)num);
-	size = (int)ft_strlen(number);
-	if (num == 0 && flags->dot == 1)
-		size = 0;
-	print_uhexoct(flags, number, size);
+	print_uhex(flags, number, size);
 	free(number);
 }

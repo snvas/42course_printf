@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:14:14 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 01:50:29 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 14:16:02 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	print_flags(t_flags *flags, va_list args)
 		print_du(flags, (va_arg(args, unsigned)));
 	else if (flags->type == 'x' || flags->type == 'X')
 		print_hex(flags, (va_arg(args, unsigned int)));
-	else if (flags->type == 'o')
-		print_octal(flags, (va_arg(args, unsigned int)));
 	else if (flags->type == 'p')
 		print_pointer(flags, (va_arg(args, unsigned long)));
 }
@@ -46,8 +44,6 @@ void	get_specs(const char *str, t_flags *flags, va_list args)
 		flags->type = 'p';
 	else if (str[flags->count] == 'u')
 		flags->type = 'u';
-	else if (str[flags->count] == 'o')
-		flags->type = 'o';
 	else if (str[flags->count] == 'x')
 		flags->type = 'x';
 	else if (str[flags->count] == 'X')

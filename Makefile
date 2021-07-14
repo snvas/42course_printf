@@ -9,9 +9,7 @@ SRCFILES = ft_printf.c\
 	  print_interger.c\
 	  print_uhex.c\
 	  utils.c\
-	  utils_a.c\
-	  utils_extra.c
-
+	  utils_a.c
 BONUSFILES = ft_printf_bonus.c\
 		   get_flags_bonus.c\
 		   get_star_bonus.c\
@@ -21,8 +19,7 @@ BONUSFILES = ft_printf_bonus.c\
 		   print_interger_bonus.c\
 		   print_uhex_bonus.c\
 		   utils_bonus.c\
-		   utils_a_bonus.c\
-		   utils_extra_bonus.c
+		   utils_a_bonus.c
 SRCDIR = ./src
 BONUSDIR = ./bonus
 SRC = $(addprefix $(SRCDIR)/, $(SRCFILES))
@@ -61,6 +58,7 @@ git:	fclean
 clean:
 		rm -f $(OBJ) a.out
 		rm -f $(OBJBONUS) a.out
+		rm -rf obj
 
 fclean: clean
 		rm -f $(NAME)

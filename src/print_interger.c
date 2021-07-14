@@ -6,7 +6,7 @@
 /*   By: snovaes <snovaes@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 15:26:58 by snovaes           #+#    #+#             */
-/*   Updated: 2021/07/14 13:27:45 by snovaes          ###   ########.fr       */
+/*   Updated: 2021/07/14 14:13:48 by snovaes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	verify_print_d_i(t_flags *flags, char *number, int size)
 	else if (flags->negative == 1 && flags->zero == 0)
 		print_int(flags, number, size);
 	else
-		print_uhexoct(flags, number, size);
+		print_uhex(flags, number, size);
 	free(number);
 }
 
